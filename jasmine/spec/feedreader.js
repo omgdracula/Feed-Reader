@@ -9,18 +9,18 @@ $(function() {
         });
 
          it ('ensures it has a URL defined and is not empty', function(){
-         		allFeeds.forEach(function(feedUrl){
+         		allFeeds.forEach(function(feed){
          			//check to see if the url value is not null AND
          				//also is not set to an empty string. 
          				//toBeTruthy() handles both.
-         			expect(feedUrl.url).toBeTruthy();
+         			expect(feed.url).toBeTruthy();
          		});
          });
 
          it ('has a name defined and the name is not empty', function(){
-         		allFeeds.forEach(function(feedUrl){
+         		allFeeds.forEach(function(feed){
          			//same process as for the url
-         			expect(feedUrl.name).toBeTruthy();
+         			expect(feed.name).toBeTruthy();
          		});
          });
     });
@@ -33,10 +33,10 @@ $(function() {
          	btn = $("a.menu-icon-link").eq(0);
          });
 
+         //grab the bodyClass and check if the className is set to menu-hidden
+
          it ('should hide the menu on default', function(){
-            const checkClass = $('body').hasClass("menu-hidden");
-         	//grab the bodyClass and check if the className is set to menu-hidden
-         	expect(checkClass).toBe(true);
+            expect($('body').hasClass('menu-hidden')).toEqual(true);
          });
 
 
@@ -66,7 +66,7 @@ $(function() {
          it('will have at least one single .entry element within the .feed container',
          	function(done){
          		//grab the first child of the feed container class
-         		const containerChild = $('.feed').children()[0].className;
+         		const containerChild = $('.feed .entry')[0].className;
          		//check to see if the first child of that object has an 
          			//entry-link class which will count as being at least
          			//one single .entry element in the feed container
