@@ -43,7 +43,7 @@ $(function() {
           it ('should display menu when clicked',
           	function(){
           		btn.click();
-                const checkMenuOpen = $('body').hasClass("");
+                const checkMenuOpen = $('body').hasClass("menu-hidden");
           		expect(checkMenuOpen).toBe(true);
 
           		btn.click();
