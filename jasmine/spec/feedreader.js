@@ -44,7 +44,7 @@ $(function() {
           	function(){
           		btn.click();
                 const checkMenuOpen = $('body').hasClass("menu-hidden");
-          		expect(checkMenuOpen).toBe(true);
+          		expect(checkMenuOpen).toBe(false);
 
           		btn.click();
                 const checkMenuClose = $('body').hasClass("menu-hidden");
